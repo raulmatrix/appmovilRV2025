@@ -1,6 +1,7 @@
 package com.example.apprv2a;
 
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +31,10 @@ public class AdaptorDatos extends RecyclerView.Adapter<AdaptorDatos.VH> {
         String texto = itemsNombres.get(position);
         holder.tvTextoNombres.setText(texto);
 
-        // Click en cada item
+
         holder.itemView.setOnClickListener(v -> {
-            android.content.Intent intent = new android.content.Intent(v.getContext(), DetallesActivity.class);
-            intent.putExtra("nombre", texto); // pasa el nombre al otro activity
+            Intent intent = new Intent(v.getContext(), DetallesActivity.class);
+            intent.putExtra("nombre", texto);
             v.getContext().startActivity(intent);
         });
     }
